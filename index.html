@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/main.css">
+  <link rel="stylesheet" href="src/icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Mountains+of+Christmas&family=Sulphur+Point:wght@300&display=swap" rel="stylesheet">
+  <!-- <script src="https://kit.fontawesome.com/4100dbb1b5.js" crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <title>Remi</title>
+</head>
+<body>
+  <div class="menu">
+    <div class="logo">
+      <a href=""><i class="remi-logo"></i></a>
+    </div>
+    <nav>
+      <p onclick="goTo('viewMain')"><i class="fa-solid fa-house"></i><span class="menu-text">Inicio</span></p>
+      <p onclick="goTo('viewColection')"><i class="fa-solid fa-vest-patches"></i><span class="menu-text">Colecciones</span></p>
+      <p onclick="goTo('viewAbout')"><i class="fa-solid fa-info"></i><span class="menu-text">About Us</span></p>
+    </nav>
+  </div>
+  <section id="viewMain">
+    <div class="main-bg">
+      <div>
+        <h1 class="mb-2">No es solo ropa</h1>
+        <p class="main-text">Sorteos y promociones</p>
+        <p>Déjanos conocerte para que ganes en sorteos y promociones, comienza a manifestar tus gustos</p>
+        <button class="btn-primario" onclick="goTo('viewLanding')"><i class="fa-solid fa-fire"></i>Ganar</button>
+      </div>
+    </div>
+    <p>Remi diseña y crea las prendas según tu personalidad, al estilo que deseas y estás buscando, puesto que somos una tienda fabricante, nuestras prendas son adaptadas a tus necesidades y gustos.</p>
+    <div class="section-descripcion">
+      <h3>Colección destacada</h3>
+      <p onclick="goTo('viewColection')">Ver más colecciones</p>
+    </div>
+    <div id="colecDestacada" class="section-contenedor">
+      <h4 class="section-contenedor-tittle">Z-Experience</h4>
+    </div>
+    <div class="section-descripcion">
+    <h3>Otras colecciones</h3>
+    </div>
+    <div id="colecChicas" class="section-contenedor">
+      <h4 class="section-contenedor-tittle">Chicas</h4>
+    </div>
+    <div id="colecChicos" class="section-contenedor">
+      <h4 class="section-contenedor-tittle">Chicos</h4>
+    </div>
+  </section>
+  <section id="viewLanding" class="landingpage hidde">
+    <div class="landingpage-contenedor">
+      <div class="landing-img">
+        <img src="src/imagenes/landing-1.jpg">
+      </div>
+      <div class="landingpage-main">
+        <h2>¡Ponte al dia con tus gustos!</h2>
+        <p>Eventualmente Remi realiza sorteos y promociones a sus seguidores, en los que puedes participar para ganar ropa llenando el siguiente formulario para que remi se pueda contactar contigo.</p>
+        <form class="landingpage-form">
+          <div class="col-6">
+            <input required type="text" id="name" class="landing-input">
+            <label for="name" class="landing-label">Nombre</label>
+          </div>
+          <div class="col-6">
+            <input required type="text" id="ape" class="landing-input">
+            <label for="ape" class="landing-label">Apellido</label>
+          </div>
+          <div class="col-6">
+            <input required type="email" id="email" class="landing-input">
+            <label for="email" class="landing-label">Email</label>
+          </div>
+          <div class="col-6">
+            <input required type="text" id="Direcccion" class="landing-input">
+            <label for="Direcccion" class="landing-label">Dirección</label>
+          </div>
+          <div class="col-12">
+            <input required type="text" id="likes" class="landing-input">
+            <label for="likes" class="landing-label">Dinos tus gustos</label>
+          </div>
+          <button type="submit" class="btn-primario"><i class="fa-solid fa-check"></i>Enviar</button>
+        </form>
+      </div>
+      <div class="landing-img">
+        <img src="src/imagenes/landing-2.jpg">
+      </div>
+    </div>
+    <h3>¿En qué te beneficias?</h3>
+    <div class="landingpage-contenedor">
+      <div class="beneficio">
+        <i class="fa-solid fa-envelope"></i>
+        <p>Recibes promociones por correo</p>
+      </div>
+      <div class="beneficio">
+        <i class="fa-solid fa-star"></i>
+        <p>Notificaciones en cada lanzamiento</p>
+      </div>
+      <div class="beneficio">
+        <i class="fa-solid fa-star"></i>
+        <p>Canjea bonos</p>
+      </div>
+      <div class="beneficio">
+        <i class="fa-solid fa-trophy"></i>
+        <p>Ganas en sorteos</p>
+      </div>
+    </div>
+    <h3>Último ganador del sorteo</h3>
+    <div class="landingpage-contenedor">
+      <div class="proff-winner">
+        <div class="social-proff-img">
+          <img src="src/imagenes/social-proff.jpg" alt="">
+        </div>
+        <div>
+          <p>Joselin</p>
+          <p>Gano sorteo por mensaje de email</sp>
+        </div>
+      </div>
+      <div class="proff-reward-img">
+        <img src="src/imagenes/premio.png" alt="">
+      </div>
+      <div class="proff-reward-details">
+        <p>Premio recibido</p>
+        <p>detalles de la prenda</p>
+      </div>
+    </div>
+  </section>
+  <section id="viewColection" class="hidde">
+    <ul id="nav" class="section-nav">
+      <li id="navExp" onclick="scrollToSection('exp')">Z-experience</li>
+      <li id="navChicas" onclick="scrollToSection('chicas')">Chicas</li>
+      <li id="navChicos" onclick="scrollToSection('chicos')">Chicos</li>
+      <li id="navCamisetas" onclick="scrollToSection('camisetas')">Camisetas</li>
+    </ul>
+    <h3 class="section-tittle" id="Texp">Z-experience</h3>
+    <div id="zExp" class="section-contenedor"></div>
+    <h2 class="section-tittle" id="Tchicas" >Chicas</h2>
+    <div id="chicas" class="section-contenedor"></div>
+    <h3 class="section-tittle" id="Tchicos" >Chicos</h3>
+    <div id="chicos" class="section-contenedor"></div>
+    <h3 class="section-tittle" id="Tcamisetas" >Camisetas</h3>
+    <div id="camisetas" class="section-contenedor"></div>
+  </section>
+  <section id="viewAbout" class="hidde">
+    <ul id="nav2" class="section-nav">
+      <li id="navEquipo" onclick="scrollToSection('equipo')">Equipo</li>
+      <li id="navStory" onclick="scrollToSection('story')">Story</li>
+      <li id="navContact" onclick="scrollToSection('contact')">Contactanos</li>
+    </ul>
+    <div id="equipo">
+      <h3 class="section-tittle" id="Tequipo">¿Quienes somos?</h3>
+      <p class="section-tittle">Somos una marca de ropa jovial que tendrá como target adultos jóvenes y adolescentes. Nos dedicamos al diseño, elaboración y confección de ropa con la combinación de varios estilos, innovando y estando a la par de las tendencias actuales. Nuestra marca simboliza un estilo de vida, que motiva a los jóvenes hacia una cultura que fomenta la vida plena, llena de experiencias positivas, con la fuerza de un ánimo emprendedor que mantiene ese impulso de seguir adelante.</p>
+      <h3 class="section-tittle">Afiliados</h3>
+      <div class="section-contenedor afiliados">
+        <div>
+          <img src="src/imagenes/afiliado-1.jpg" alt="">
+        </div>
+        <div>
+          <img src="src/imagenes/afiliado-2.jpg" alt="">
+        </div>
+        <div>
+          <img src="src/imagenes/afiliado-3.jpg" alt="">
+        </div>
+      </div>
+      </div>
+      <div id="story">
+        <h3 id="Tstory" class="section-tittle">Inicios de Remi</h3>
+        <p class="section-tittle">Remi surge como un proyecto escolar orientado hacia la creación  de emprendimientos que permitan poner en practica los conocimientos adquiridos academicamente. Este emprendimiento estubo vinculado además a acciones sociales donde se buscaba ayudar a niños y adolecentes de una fundación </p>
+        <div class="section-contenedor story">
+          <div>
+            <h4>Mision</h4>
+            <p>Fabricar y comercializar ropa de excelente calidad a precios accesibles, asegurando la disponibilidad y el servicio, manteniendo costos competitivos a través del aprovechamiento de los recursos.</p>
+          </div>
+          <div>
+            <h4>Vision</h4>
+            <p>Ser una empresa reconocida en el mercado de la moda, mediante el uso de la innovación, ofreciendo prendas y servicios de excelente calidad para el mercado local y con proyección al mercado nacional e internacional.</p>
+          </div>
+        </div>
+      </div>
+      <div id="contact">
+        <h3 id="Tcontact" class="section-tittle">Contactanos</h3>
+        <p></p>
+        <form></form>
+      </div>
+  </section>
+  <footer>
+    <section>
+      <div class="fit-content">
+        <img src="src/imagenes/remi-logo.png" alt="">
+      </div>
+      <ul class="footer-list">
+        <li>Contactanos</li>
+        <li>Nosotros</li>
+        <li>Story</li>
+      </ul>
+    </section>
+    <div class="footer-rights">
+      <a href="">@2022 Copyright Designed by Aderitauwu04 | Derechos reservados</a>
+      <a href="">Política de privacidad</a>
+      <a href="">Términos y condiciones</a>
+    </div>
+  </footer>
+  <script src="src/app.js"></script>
+</body>
+</html>

@@ -1,15 +1,39 @@
-.remi-logo {
-  margin: 6rem 0;
-  content: url('imagenes/remi-logo-text.png');
+.btn-menu +label::before {
+  color: var(--color-primario-1);
+  font-size: 2rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f0c9";
 }
-.menu:hover .remi-logo {
-  width: auto;
-  margin: 0;
-  content: url('imagenes/remi-logo.png');
+.btn-menu:checked + label::before {
+  content: "\f053";
+  font-size: 3rem;
 }
 .section-nav::before {
-  content: url("data:image/svg+xml;charset=UTF-8, <svg width='42' height='52' viewBox='0 0 42 52' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 0V50.5H41.5' stroke='%23555350' stroke-width='2'/></svg>");
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  content: url('imagenes/remi-logo-min.png') ;
 }
-.section-nav::after {
-  content: url("data:image/svg+xml;charset=UTF-8, <svg width='44' height='52' viewBox='0 0 44 52' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M42.5 0V51H0.500001' stroke='%23555350' stroke-width='2'/></svg>");
+.remi-logo {
+  content: url('imagenes/remi-logo.png');
 }
+
+@media screen and (min-width: 992px) {
+  .section-nav::before {
+    content: url("data:image/svg+xml;charset=UTF-8, <svg width='42' height='52' viewBox='0 0 42 52' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 0V50.5H41.5' stroke='%23555350' stroke-width='2'/></svg>");
+  }
+  .section-nav::after {
+    content: url("data:image/svg+xml;charset=UTF-8, <svg width='44' height='52' viewBox='0 0 44 52' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M42.5 0V51H0.500001' stroke='%23555350' stroke-width='2'/></svg>");
+  }
+  .remi-logo {
+    margin: 6rem 0;
+    content: url('imagenes/remi-logo-text.png');
+  }
+  .menu:hover .remi-logo {
+    width: auto;
+    margin: 0;
+    content: url('imagenes/remi-logo.png');
+  }
+}
+

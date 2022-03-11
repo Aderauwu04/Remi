@@ -200,6 +200,7 @@ chicos = document.getElementById('chicos'),
 camisetas = document.getElementById('camisetas')
 
 $(document).ready(function() {
+  // Llenar la galería de inicio y las colecciones
   galeria[0].inventario.forEach(prenda => {
     colDestacada.innerHTML += prenda.html
   });
@@ -221,44 +222,124 @@ $(document).ready(function() {
   galeria[6].inventario.forEach(prenda => {
     camisetas.innerHTML += prenda.html
   });
+  // Funcionalidad con la base de datos de los formularios
+  // Formulario de registro
+  $('#formulario-registro').submit(function (e) {
+    const datos = {
+      name: $('#name').val(),
+      apellido: $('#apellido').val(),
+      email: $('#email').val(),
+      direccion: $('#direccion').val(),
+      gustos: $('#gustos').val(),
+    };
+    console.log(datos);
+    $.post('back/agregarRegistro.php', datos, function (response) {
+      console.log(response);
+      $('#formulario-registro').trigger('reset');
+    });
+    e.preventDefault();
+  });
+  // Formulario de contacto
+  $('#formulario-contacto').submit(function (e) {
+    const datos = {
+      name: $('#name-contact').val(),
+      apellido: $('#apellido-contact').val(),
+      email: $('#email-contact').val(),
+      telefono: $('#tel-contact').val(),
+      direccion: $('#direccion-contact').val(),
+      motivo: $('#motivo-contact').val()
+    };
+    console.log(datos);
+    $.post('back/agregarContacto.php', datos, function (response) {
+      console.log(response);
+      $('#formulario-contacto').trigger('reset');
+    });
+    e.preventDefault();
+  });
 })
 
 // Funcionalidad del navbar lateral
-const viewMain = document.getElementById('viewMain'),
-viewLanding = document.getElementById('viewLanding'),
-viewColection = document.getElementById('viewColection'),
-viewAbout = document.getElementById('viewAbout'),
-vistas = [
+const vistas = [
   {
     tittle: 'viewMain',
-    document: viewMain,
+    document: document.getElementById('viewMain'),
   },
   {
     tittle: 'viewLanding',
-    document: viewLanding,
+    document: document.getElementById('viewLanding'),
   },
   {
     tittle: 'viewColection',
-    document: viewColection,
+    document: document.getElementById('viewColection'),
   },
   {
     tittle: 'viewAbout',
-    document: viewAbout,
+    document: document.getElementById('viewAbout'),
   }
-]
-function goTo (seccion) {
+],
+html = document.querySelector('html')
+function goTo (seccion, noTop) {
   vistas.forEach(vista => {
-    if (!vista.document.classList.contains('hidde')) {
-      vista.document.classList.add('hidde')
-      window
+    if (!vista.document.classList.contains('hidden')) {
+      vista.document.classList.add('hidden')
+      vista.document.classList.remove('show')
     }
     if (seccion === vista.tittle) {
-      vista.document.classList.remove('hidde')
+      html.setAttribute('style', 'scroll-behavior: auto');
+      vista.document.classList.remove('hidden')
+      vista.document.classList.add('show')
+    }
+  });
+  html.scrollIntoView({ block: "start", behavior: "auto" })
+}
+
+// Acción de scroll en las secciones
+const secciones = [
+  {
+    tittle: 'main',
+    document: document.getElementById("viewMain"),
+  },
+  {
+    tittle: 'exp',
+    document: document.getElementById("Texp"),
+  },
+  {
+    tittle: 'chicas',
+    document: document.getElementById("Tchicas"),
+  },
+  {
+    tittle: 'chicos',
+    document: document.getElementById("Tchicos"),
+  },
+  {
+    tittle: 'camisetas',
+    document:document.getElementById("Tcamisetas"),
+  },
+  {
+    tittle: 'equipo',
+    document: document.getElementById("Tequipo"),
+  },
+  {
+    tittle: 'story',
+    document: document.getElementById("Tstory"),
+  },
+  {
+    tittle: 'contact',
+    document: document.getElementById("Tcontact"),
+  }
+]
+function scrollToSection(section, toTop) {
+  secciones.forEach(tittle => {
+    if (section == tittle.tittle) {
+      tittle.document.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
+    if (toTop) {
+      html.scrollIntoView({ block: "start", behavior: "auto" })
     }
   });
 }
 
- // Mostrar y ocultar nav de las secciones
+// Mostrar y ocultar nav de las secciones
 const navSection = document.getElementById("nav"), navSection2 = document.getElementById("nav2")
 let scroll = window.pageYOffset;
 window.onscroll = function() {
@@ -271,39 +352,6 @@ window.onscroll = function() {
     navSection2.classList.remove("shownav");
   }
   scroll = actualScroll;
-}
-
-// Acción de scroll en las secciones
-const Texp = document.getElementById("Texp"),
-Tchicas = document.getElementById("Tchicas"),
-Tchicos = document.getElementById("Tchicos"),
-Tcamisetas = document.getElementById("Tcamisetas"),
-Tequipo = document.getElementById("Tequipo"),
-Tstory = document.getElementById("Tstory"),
-Tcontact = document.getElementById("Tcontact")
-
-function scrollToSection(section) {
-  if (section == 'exp') {
-    Texp.scrollIntoView({ block: "start" });
-  }
-  if (section == 'chicas') {
-    Tchicas.scrollIntoView({ block: "start" });
-  }
-  if (section == 'chicos') {
-    Tchicos.scrollIntoView({ block: "start" });
-  }
-  if (section == 'camisetas') {
-    Tcamisetas.scrollIntoView({ block: "start" });
-  }
-  if (section == 'equipo') {
-    Tequipo.scrollIntoView({ block: "start" });
-  }
-  if (section == 'story') {
-    Tstory.scrollIntoView({ block: "start" });
-  }
-  if (section == 'contact') {
-    Tcontact.scrollIntoView({ block: "start" });
-  }
 }
 
 // Clase que indica la seccione en la que se encuentra el usuario

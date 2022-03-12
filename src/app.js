@@ -294,6 +294,7 @@ function goTo (seccion, noTop) {
 }
 
 // Acción de scroll en las secciones
+const navSection = document.getElementById("nav"), navSection2 = document.getElementById("nav2")
 const secciones = [
   {
     tittle: 'main',
@@ -337,19 +338,27 @@ function scrollToSection(section, toTop) {
       html.scrollIntoView({ block: "start", behavior: "auto" })
     }
   });
+  const ocultarbarra = setTimeout(() => {
+    navSection.classList.remove("shownav");
+    navSection2.classList.remove("shownav");
+  }, 800)
 }
 
 // Mostrar y ocultar nav de las secciones
-const navSection = document.getElementById("nav"), navSection2 = document.getElementById("nav2")
 let scroll = window.pageYOffset;
 window.onscroll = function() {
   let actualScroll = window.pageYOffset;
   if (scroll > actualScroll) {
     navSection.classList.add("shownav");
     navSection2.classList.add("shownav");
-  } else {
+  }
+  else {
     navSection.classList.remove("shownav");
     navSection2.classList.remove("shownav");
+  }
+  if (window.pageYOffset <= 100 ) {
+    navSection.classList.add("shownav");
+    navSection2.classList.add("shownav");
   }
   scroll = actualScroll;
 }

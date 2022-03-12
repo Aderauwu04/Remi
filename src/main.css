@@ -37,7 +37,6 @@ h4 {
 p, i {
   color: var(--color-primario-2);
   line-height: 2.5rem;
-  font-size: 1rem;
 }
 footer a {
   color: var(--color-primario-1);
@@ -108,6 +107,7 @@ footer a {
   transform: translateX(-100rem);
 }
 footer {
+  margin-top: 2rem;
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 1rem;
@@ -115,7 +115,6 @@ footer {
 }
 footer section {
   display: flex;
-  text-align: end;
   background-color: var(--color-primario-1);
   width: 100%;
   justify-content: space-around;
@@ -142,7 +141,6 @@ footer section {
   text-align: center;
 }
 .section-contenedor {
-  margin-bottom: 3rem;
   padding-bottom: 0;
   display: flex;
   justify-content: space-around;
@@ -193,21 +191,15 @@ footer section {
 }
 
 /* Contenedores del Landingpage */
-.landingpage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 3rem;
-}
 .landingpage-contenedor {
   margin-bottom: 3rem;
   padding: 3rem .5rem 0 .5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
-.landingpage-main {
+.form-contenedor {
   padding: 1rem;
 }
 .beneficio {
@@ -224,6 +216,8 @@ footer section {
   display: flex;
   align-items: center;
   text-align: start;
+  width: 20rem;
+  justify-content: center;
 }
 .proff-winner-details {
   border-radius: 2rem;
@@ -231,7 +225,7 @@ footer section {
   font-size: 1rem;
   padding: 1rem;
   padding-left: 4rem;
-  margin-left: 3rem;
+  margin-left: 4rem;
 }
 .proff-reward-details {
   bottom: 0;
@@ -245,7 +239,7 @@ footer section {
 
 /* listas */
 nav {
-  height: calc(101vh - 248px);
+  height: calc(103vh - 248px);
   overflow: hidden auto;
   padding: 1.5rem;
 }
@@ -272,7 +266,7 @@ nav {
   position: sticky;
   z-index: 1;
   font-size: .6rem;
-  height: 5rem;
+  height: 6rem;
   top: 0rem;
   transform: translateY(-5rem);
   transition: all .3s ease-in-out;
@@ -288,6 +282,7 @@ nav {
   border: 0;
   border-style: solid;
   border-bottom-width: .2rem;
+  margin-bottom: 0.3rem;
 }
 .section-nav li.active {
   border-color: #F3C86D;
@@ -313,11 +308,11 @@ nav {
 .footer-rights {
   padding-top: 1rem;
 }
-.redes {
+.lista-redes {
   display: flex;
   justify-content: space-between;
 }
-.redes i {
+.lista-redes i {
   font-size: 3rem;
 }
 
@@ -335,7 +330,7 @@ nav {
 .btn-menu + label {
   position: fixed;
   width: auto;
-  top: .5rem;
+  top: 1rem;
   left: 1rem;
   transition: left .5s ease;
   z-index: 5;
@@ -424,8 +419,10 @@ img {
   display: none;
 }
 .winner-img {
-  position: absolute;
   width: 35%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
 }
 .reward-img {
   width: 14rem;
@@ -456,24 +453,97 @@ img {
 }
 
 /* Responsive */
+
 @media screen and (min-width: 576px) {
+  .form-contenedor h4 {
+    font-size: 2.5rem;
+  }
+  .section-nav {
+    font-size: 1rem;
+  }
+  .section-contenedor.gallery > div {
+    flex: 0 0 33%;
+    max-width: 33%;
+  }
+  .section-descripcion {
+    display: flex;
+    text-align: start;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  .section-contenedor-tittle {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: 3rem;
+    transform-origin: 0;
+    bottom: 0;
+    font-size: 3rem;
+    width: auto;
+  }
+  footer section {
+    text-align: center;
+    flex-direction: row;
+  }
+  .form-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .redes {
+    padding: .5rem;
+    max-width: 100%;
+  }
+  .lista-redes i {
+    font-size: 2rem;
+  }
+  .section-contenedor.gallery {
+    padding-left: 5rem;
+  }
+  #camisetas.gallery > div {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  #viewColection .gallery {
+    padding: 1rem 0;
+  }
+  .section-contenedor.story > div {
+    flex: 0 0 41%;
+    max-width: 41%;
+  }
 }
 
+@media screen and (min-width: 768px) {
+  .section-contenedor.gallery > div {
+    flex: 0 0 25%;
+    max-width: 24%;
+  }
+}
 @media screen and (min-width: 992px) {
-  h1 {
-    font-size: 3rem;
+  .footer-list {
+    flex: 0 0 33%;
+    max-width: 33%;
   }
-  .main-bg > div {
-    width: 45vh;
-    top: 7rem;
-    left: 8rem;
+  .section-contenedor.contacto {
+    flex-direction: row;
   }
-  .menu {
-    width: 3rem;
+  .form-contenedor {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .btn-menu + label {
+    display: none;
   }
   .logo {
     transform: rotate(-90deg);
     transition: all .5s ease;
+  }
+  nav {
+    margin-left: 3rem;
+    transition: all .5s ease;
+  }
+  .menu {
+    width: 3rem;
   }
   .menu-text {
     width: max-content;
@@ -481,12 +551,8 @@ img {
     margin-left: .7rem;
     transition: opacity .5s ease;
   }
-  .section-nav {
-    width: 70%;
-    margin: auto;
-  }
-  nav ul li {
-    width: 2rem;
+  .menu:hover nav {
+    margin-left: 0;
   }
   .menu:hover {
     width: 13rem;
@@ -500,74 +566,10 @@ img {
   .menu:hover li {
     width: 15vh;
   }
-  .footer-list {
-    max-width: 45%;
+  .section-nav {
+    height: 6rem;
   }
-  .footer-rights {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  section {
+  section, footer {
     padding-left: 3rem;
-  }
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .section-descripcion {
-    display: flex;
-    text-align: start;
-    justify-content: space-between;
-    padding: 2rem;
-  }
-  .section-descripcion p {
-    text-align: end;
-  }
-  .section-contenedor.gallery {
-    padding: 2rem;
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-  .section-contenedor-tittle {
-    transform: rotate(-90deg);
-    transform-origin: 0;
-    position: absolute;
-    left: 5rem;
-    bottom: 0rem;
-    font-size: 3rem;
-  }
-  .section-text {
-    text-align: start;
-    margin: 4rem 7rem 0rem 7rem;
-  }
-  .section-contenedor.contacto {
-    flex-direction: row;
-  }
-  .section-contenedor.contacto > div {
-    flex: 0 0 41%;
-    max-width: 41%;
-  }
-  .section-contenedor.story > div {
-    flex: 0 0 41%;
-    max-width: 41%;
-  }
-  .landing-img-1 {
-    width: 20%;
-    height: 30rem;
-  }
-  .landingpage-main {
-    width: 40%;
-  }
-  .landingpage-contenedor {
-    align-items: center;
-    justify-content: space-evenly;
-    display: flex;
-    width: 100%;
-  }
-  .landingpage .landingpage-contenedor:last-child {
-    padding-top: 0;
   }
 }

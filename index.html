@@ -18,7 +18,7 @@
   <label for="btnMenu"></label>
   <div class="menu">
     <div class="logo">
-      <a href=""><i class="remi-logo"></i></a>
+      <i class="remi-logo" onclick="goTo('viewMain')"></i>
     </div>
     <nav>
       <ul class="lista-navegacion">
@@ -64,12 +64,12 @@
       <h4 class="section-contenedor-tittle">Chicos</h4>
     </div>
   </section>
-  <section id="viewLanding" class="view hidden landingpage">
+  <section id="viewLanding" class="view hidden">
     <div class="landingpage-contenedor">
       <div class="landing-img-1">
         <img src="src/imagenes/landing-1.jpg">
       </div>
-      <div class="landingpage-main">
+      <div class="form-contenedor">
         <h2>¡Ponte al dia con tus gustos!</h2>
         <p>Eventualmente Remi realiza sorteos y promociones a sus seguidores, en los que puedes participar para ganar ropa llenando el siguiente formulario para que remi se pueda contactar contigo.</p>
         <form id="formulario-registro" class="form">
@@ -122,12 +122,12 @@
     <h3 class="section-text">Último ganador del sorteo</h3>
     <div class="landingpage-contenedor">
       <div class="proff">
-        <div class="winner-img">
-          <img src="src/imagenes/social-proff.jpg" alt="">
-        </div>
         <div class="proff-winner-details">
           <p>Joselin</p>
           <p>Gano sorteo por mensaje de email</sp>
+        </div>
+        <div class="winner-img">
+          <img src="src/imagenes/social-proff.jpg" alt="">
         </div>
       </div>
       <div class="proff">
@@ -150,11 +150,11 @@
     </ul>
     <h3 class="section-text pt-4" id="Texp">Z-experience</h3>
     <div id="zExp" class="section-contenedor gallery destacada"></div>
-    <h2 class="section-text" id="Tchicas" >Chicas</h2>
+    <h3 class="section-text pt-4" id="Tchicas" >Chicas</h3>
     <div id="chicas" class="section-contenedor gallery"></div>
-    <h3 class="section-text" id="Tchicos" >Chicos</h3>
+    <h3 class="section-text pt-4" id="Tchicos" >Chicos</h3>
     <div id="chicos" class="section-contenedor gallery"></div>
-    <h3 class="section-text" id="Tcamisetas" >Camisetas</h3>
+    <h3 class="section-text pt-4" id="Tcamisetas" >Camisetas</h3>
     <div id="camisetas" class="section-contenedor gallery"></div>
   </section>
   <section id="viewAbout" class="view hidden">
@@ -163,8 +163,8 @@
       <li id="navStory" onclick="scrollToSection('story')">Story</li>
       <li id="navContact" onclick="scrollToSection('contact')">Contactanos</li>
     </ul>
-    <h3 id="Tequipo" class="section-text pt-4">¿Quienes somos?</h3>
     <div id="equipo">
+      <h3 id="Tequipo" class="section-text pt-4">¿Quienes somos?</h3>
       <p class="section-text">Somos una marca de ropa jovial que tendrá como target adultos jóvenes y adolescentes. Nos dedicamos al diseño, elaboración y confección de ropa con la combinación de varios estilos, innovando y estando a la par de las tendencias actuales. Nuestra marca simboliza un estilo de vida, que motiva a los jóvenes hacia una cultura que fomenta la vida plena, llena de experiencias positivas, con la fuerza de un ánimo emprendedor que mantiene ese impulso de seguir adelante.</p>
       <h3 class="section-text">Afiliados</h3>
       <div class="section-contenedor afiliados">
@@ -179,67 +179,63 @@
         </div>
       </div>
     </div>
-    <h3 id="Tstory" class="section-text">Inicios de Remi</h3>
-    <div id="story">
+    <div id="story" class="section-contenedor story">
+      <h3 id="Tstory" class="section-text pt-4">Inicios de Remi</h3>
       <p class="section-text">Remi surge como un proyecto escolar orientado hacia la creación  de emprendimientos que permitan poner en practica los conocimientos adquiridos academicamente. Este emprendimiento estubo vinculado además a acciones sociales donde se buscaba ayudar a niños y adolecentes de una fundación </p>
-      <div class="section-contenedor story">
-        <div>
-          <h4>Misión</h4>
-          <p>Fabricar y comercializar ropa de excelente calidad a precios accesibles, asegurando la disponibilidad y el servicio, manteniendo costos competitivos a través del aprovechamiento de los recursos.</p>
-        </div>
-        <div>
-          <h4>Vision</h4>
-          <p>Ser una empresa reconocida en el mercado de la moda, mediante el uso de la innovación, ofreciendo prendas y servicios de excelente calidad para el mercado local y con proyección al mercado nacional e internacional.</p>
-        </div>
+      <div>
+        <h4>Misión</h4>
+        <p>Fabricar y comercializar ropa de excelente calidad a precios accesibles, asegurando la disponibilidad y el servicio, manteniendo costos competitivos a través del aprovechamiento de los recursos.</p>
+      </div>
+      <div>
+        <h4>Vision</h4>
+        <p>Ser una empresa reconocida en el mercado de la moda, mediante el uso de la innovación, ofreciendo prendas y servicios de excelente calidad para el mercado local y con proyección al mercado nacional e internacional.</p>
       </div>
     </div>
-    <div id="contact">
-      <div class="section-contenedor contacto">
-        <div>
-          <h3 id="Tcontact" class="mb-2">¡Comunicate con nuestro equipo!</h3>
-          <p>
-            <span class="contacto-info">Correo de Remi</span>
-            reminoessoloropa@gmail.com
-          </p>
-          <p>
-            <span class="contacto-info">Número telefónico</span>
-            +58 424-7528433
-          </p>
-          <p>
-            <span class="contacto-info">Dirección</span>
-            Venezuela Trujillo Valera Av. Santa barbara
-          </p>
-        </div>
-        <div>
-          <h4>Formulario de contacto</h4>
-          <form id="formulario-contacto" class="form">
-            <div class="col-6">
-              <input required type="text" id="name-contact" class="form-input">
-              <label for="name-contact" class="form-label">Nombre</label>
-            </div>
-            <div class="col-6">
-              <input required type="text" id="apellido-contact" class="form-input">
-              <label for="apellido-contact" class="form-label">Apellido</label>
-            </div>
-            <div class="col-6">
-              <input required type="email" id="email-contact" class="form-input">
-              <label for="email-contact" class="form-label">Email</label>
-            </div>
-            <div class="col-6">
-              <input required type="tel" id="tel-contact" class="form-input">
-              <label for="tel-contact" class="form-label">Teléfono</label>
-            </div>
-            <div class="col-12">
-              <input required type="text" id="direction-contact" class="form-input">
-              <label for="direction-contact" class="form-label">Dirección</label>
-            </div>
-            <div class="col-12">
-              <input required type="text" id="motivo-contact" class="form-input">
-              <label for="motivo-contact" class="form-label">Motivo</label>
-            </div>
-            <button type="submit" class="btn-primario"><i class="fa-solid fa-check"></i>Enviar</button>
-          </form>
-        </div>
+    <div id="contact" class="section-contenedor contacto">
+      <div>
+        <h3 id="Tcontact" class="mb-2 pt-4">¡Comunicate con nuestro equipo!</h3>
+        <p>
+          <span class="contacto-info">Correo de Remi</span>
+          reminoessoloropa@gmail.com
+        </p>
+        <p>
+          <span class="contacto-info">Número telefónico</span>
+          +58 424-7528433
+        </p>
+        <p>
+          <span class="contacto-info">Dirección</span>
+          Venezuela Trujillo Valera Av. Santa barbara
+        </p>
+      </div>
+      <div class="form-contenedor">
+        <h4>Formulario de contacto</h4>
+        <form id="formulario-contacto" class="form">
+          <div class="col-6">
+            <input required type="text" id="name-contact" class="form-input">
+            <label for="name-contact" class="form-label">Nombre</label>
+          </div>
+          <div class="col-6">
+            <input required type="text" id="apellido-contact" class="form-input">
+            <label for="apellido-contact" class="form-label">Apellido</label>
+          </div>
+          <div class="col-6">
+            <input required type="email" id="email-contact" class="form-input">
+            <label for="email-contact" class="form-label">Email</label>
+          </div>
+          <div class="col-6">
+            <input required type="tel" id="tel-contact" class="form-input">
+            <label for="tel-contact" class="form-label">Teléfono</label>
+          </div>
+          <div class="col-12">
+            <input required type="text" id="direction-contact" class="form-input">
+            <label for="direction-contact" class="form-label">Dirección</label>
+          </div>
+          <div class="col-12">
+            <input required type="text" id="motivo-contact" class="form-input">
+            <label for="motivo-contact" class="form-label">Motivo</label>
+          </div>
+          <button type="submit" class="btn-primario"><i class="fa-solid fa-check"></i>Enviar</button>
+        </form>
       </div>
     </div>
   </section>
@@ -253,9 +249,9 @@
         <li onclick="goTo('viewAbout'), scrollToSection('equipo', true)">Nosotros</li>
         <li onclick="goTo('viewAbout'), scrollToSection('story', true)">Story</li>
       </ul>
-      <div>
+      <div class="redes">
         <p>Buscanos en las redes sociales</p>
-        <ul class="redes">
+        <ul class="lista-redes">
           <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
           <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
           <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>

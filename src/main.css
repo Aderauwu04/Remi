@@ -104,7 +104,7 @@ footer a {
   position: static;
 }
 .hidden {
-  transform: translateX(-100rem);
+  transform: translateX(-150rem);
 }
 footer {
   margin-top: 2rem;
@@ -134,19 +134,26 @@ footer section {
 }
 .main-bg > div {
   position: absolute;
-  top: 10rem;
-  left: 1rem;
+  top: 8rem;
+  left: 10%;
+  width: 16rem;
 }
 .section-descripcion {
   text-align: center;
 }
 .section-contenedor {
-  padding-bottom: 0;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   position: relative;
   text-align: center;
+}
+.section-contenedor.afiliados {
+  align-items: center;
+}
+.section-contenedor.equipo {
+  padding: 0 .5rem;
 }
 .bg-secundario {
   background-color: var(--color-secundario-2);
@@ -171,9 +178,6 @@ footer section {
 }
 .gallery.destacada h4 {
   color: var(--color-secundario-1);
-}
-.section-contenedor.afiliados {
-  align-items: center;
 }
 .section-contenedor.contacto {
   flex-direction: column;
@@ -206,6 +210,9 @@ footer section {
   align-items: center;
   display: flex;
   font-size: 1.5rem;
+}
+.beneficio p {
+  font-size: 1rem;
 }
 .beneficio i {
   color: var(--color-primario-1);
@@ -255,7 +262,6 @@ nav {
   transition: width .5s ease;
 }
 .section-nav {
-  flex-direction: row;
   flex-wrap: wrap;
   background-color: var(--color-secundario-1);
   align-items: flex-end;
@@ -443,13 +449,25 @@ img {
   flex: 100%;
   max-width: 100%;
 }
+.col-8 {
+  flex: 0 0 83%;
+  max-width: 83%;
+}
+.col-7 {
+  flex: 58%;
+  max-width: 58%;
+}
 .col-6 {
   flex: 50%;
   max-width: 50%;
 }
-.col-8 {
-  flex: 0 0 83%;
-  max-width: 83%;
+.col-5 {
+  flex: 41%;
+  max-width: 41%;
+}
+.col-4 {
+  flex: 0 0 25%;
+  max-width: 25%;
 }
 
 /* Responsive */
@@ -515,7 +533,15 @@ img {
 @media screen and (min-width: 768px) {
   .section-contenedor.gallery > div {
     flex: 0 0 25%;
-    max-width: 24%;
+    max-width: 25%;
+  }
+  .col-md-3 {
+    flex: 0 0 33%;
+    max-width: 33%;
+  }
+  .col-md-2 {
+    flex: 0 0 16%;
+    max-width: 16%;
   }
 }
 @media screen and (min-width: 992px) {
@@ -523,14 +549,36 @@ img {
     flex: 0 0 33%;
     max-width: 33%;
   }
+  .section-contenedor.equipo > div {
+    flex-direction: row;
+    width: 50%;
+  }
   .section-contenedor.contacto {
     flex-direction: row;
   }
   .form-contenedor {
     width: 50%;
   }
+  .landingpage-contenedor {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .landingpage-contenedor.social-proff {
+    justify-content: center;
+  }
+  .beneficio p {
+    font-size: 1.2rem;
+  }
+  .landing-img-1 {
+    display: block;
+    width: 20%;
+    height: 30rem;
+  }
 }
 @media screen and (min-width: 1200px) {
+  .main-bg ~ p {
+    width: 40rem;
+  }
   .btn-menu + label {
     display: none;
   }
@@ -567,9 +615,26 @@ img {
     width: 15vh;
   }
   .section-nav {
-    height: 6rem;
+    height: 4rem;
+  }
+  .section-contenedor.gallery {
+    padding: 1rem 9rem 1rem 9rem !important;
   }
   section, footer {
     padding-left: 3rem;
+  }
+  .section-descripcion {
+    padding-left: 9rem;
+  }
+  .section-contenedor-tittle {
+    left: 10rem;
+  }
+  #camisetas.gallery > div {
+    flex: 0 0 16%;
+    max-width: 16%;
+  }
+  .mx-xl-4 {
+    margin-left: 4rem;
+    margin-right: 4rem;
   }
 }
